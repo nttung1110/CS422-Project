@@ -1,5 +1,5 @@
 ### This class is used for talking to show_and_tell repository
-from pycocotools.coco import COCO
+# from pycocotools.coco import COCO
 import numpy as np
 class COCOAPIManager():
 
@@ -34,8 +34,8 @@ class COCOAPIManager():
         ###testing
         res = {}
         res["list_img"] = []
-        res["list_img"].append({"name": "a","content":"img_content_a"})
-        res["list_img"].append({"name": "b","content":"img_content_b"})
+        res["list_img"].append({"name": "a","content":"img_content_a","query_search":request["text"]})
+        res["list_img"].append({"name": "b","content":"img_content_b","query_search":request["text"]})
  
         return res
 
@@ -43,7 +43,7 @@ class COCOAPIManager():
 
 
     def process(self, request):
-        type_req = request["type_request"]
+        type_req = request['type_request']
         if type_req == "search":
             return self.retrieve(request)
 
