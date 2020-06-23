@@ -20,12 +20,10 @@ class Interface_Action:
     #     self.field_request = {}
     #     self.field_request["query"] = self.init_query()
 
-    def process_search(self, AI_Services_Manager):
+    def process_request(self, AI_Services_Manager):
         ## checking which type of search user want
         pass
 
-    def process_refine(self, AI_Services_Manager):
-        pass
 
 
 

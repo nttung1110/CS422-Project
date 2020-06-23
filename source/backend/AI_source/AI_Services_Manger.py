@@ -1,5 +1,5 @@
 ## serve all services involving with AI, produce services and act as factory
-from AI_source.AI_Text_Services import AI_Text_Services
+from AI_source.AI_Text_Repo.AI_Text_Services import AI_Text_Services
 class AI_Services_Manager():
     def __init__(self):
         #gather all involving resources
