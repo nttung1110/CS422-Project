@@ -10,6 +10,7 @@ class Text_Action(Interface_Action):
     def django_req_2_my_req(self, request):
         my_req = {}
         my_req["type_request"] = request.POST["type_request"]
+        my_req["limit_size"] = int(request.POST["limit_size"])
         my_req["text"] = request.POST["text"]
         return my_req
 

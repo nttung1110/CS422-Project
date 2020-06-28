@@ -1,5 +1,5 @@
 ### This class is used for talking to show_and_tell repository
-# from pycocotools.coco import COCO
+from pycocotools.coco import COCO
 import numpy as np
 
 class COCOAPIManager():
@@ -32,7 +32,6 @@ class COCOAPIManager():
 
         catIds = coco.getCatIds(catNms=norm_q_list)
         imgIds = coco.getImgIds(catIds=catIds)
-        print(imgIds)
         limit_size = min(limit_size, len(imgIds))
         
         imgIds = self.filter_most_relevant(imgIds, limit_size)
@@ -40,7 +39,6 @@ class COCOAPIManager():
         res = {}
         res["list_img"] = []
         for each_id in imgIds:
-            print(each_id)
             res["list_img"].append(coco.loadImgs(each_id)[0])
 
         return res
