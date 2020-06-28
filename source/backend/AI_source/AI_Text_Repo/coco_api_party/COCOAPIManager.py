@@ -1,5 +1,5 @@
 ### This class is used for talking to show_and_tell repository
-from pycocotools.coco import COCO
+# from pycocotools.coco import COCO
 import numpy as np
 
 class COCOAPIManager():
@@ -56,7 +56,7 @@ class COCOAPIManager():
 
 
     def process(self, request):
-        type_req = request["type_request"]
+        type_req = request['type_request']
         if type_req == "search":
             return self.retrieve(request)
 
