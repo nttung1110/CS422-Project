@@ -47,3 +47,7 @@ Text service currently serve POST request to retrieve images
 Sample POST request can be as following: 
 
 <img src="/instruction/sample_request.png" width=800 height=300 />
+
++ API Documentation:
+
+https://documenter.getpostman.com/view/8735149/T17Dgomi?version=latest
