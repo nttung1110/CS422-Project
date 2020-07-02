@@ -1,12 +1,4 @@
 # CS422-Project
-## Environment setup
-
-```
-ssh nttung@thevncore-lab.mooo.com -p 19523
-
-cd CS422-Project
-
-conda activate CS422_tung
 ```
 
 ### Text module
