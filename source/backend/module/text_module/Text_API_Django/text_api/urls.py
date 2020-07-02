@@ -9,5 +9,6 @@ app_name = "text_api"
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('text_search/search/', TextSearch.as_view()),
+    # path('text_retrieve/retrieve/', TextRetrieve.as_view()),
     #path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

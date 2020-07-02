@@ -1,0 +1,6 @@
+#!/bin/bash
+# Deploy image service text
+
+cd source/backend/module/image_module/Image_API_Django
+
+python manage.py runserver 6002

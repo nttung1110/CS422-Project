@@ -1,0 +1,6 @@
+#!/bin/bash
+# Deploy sketch service text
+
+cd source/backend/module/sketch_module/Sketch_API_Django
+
+python manage.py runserver 6001

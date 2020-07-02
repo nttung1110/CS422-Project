@@ -28,4 +28,11 @@ class TextSearch(APIView):
         get_action = Text_Action(request)
         results_search = get_action.process_request(all_services)
         return Response({"results": results_search})
+
+# class TextRetrieve(APIView):
+#     def post(self, request):# do retrieve request
+#         all_services = AI_Services_Manager()
+#         get_action = Text_Action(request)
+#         results_retrieve = get_action.process_request(all_services)
+#         return Response({"results": results_search})
 # Create your views here.

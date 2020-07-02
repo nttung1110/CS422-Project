@@ -3,7 +3,8 @@ from module.interface_module.Interface_Action import  Interface_Action
 class Text_Action(Interface_Action):
     def __init__(self, request):
         # process request
-        if "is_internal" in request:
+        print(type(request))
+        if type(request) == dict():# internal call
             my_req = request
         else:
             my_req = self.django_req_2_my_req(request)
@@ -13,8 +14,14 @@ class Text_Action(Interface_Action):
     def django_req_2_my_req(self, request):
         my_req = {}
         my_req["type_request"] = request.POST["type_request"]
-        my_req["limit_size"] = int(request.POST["limit_size"])
-        my_req["text"] = request.POST["text"]
+
+        if my_req["type_request"] == "search":
+            my_req["limit_size"] = int(request.POST["limit_size"])
+            my_req["text"] = request.POST["text"]
+        
+        elif my_req["type_request"] == "refine":
+            my_req["text"] = request.POST["text"]
+            my_req["list_imgIds"] = request.POST["list_imgIds"]
         return my_req
 
     def process_request(self, AI_Services_Manager):

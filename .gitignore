@@ -1,4 +1,4 @@
 exp/
 *.pyc
 data_COCO/
-
+list_imgID.txt

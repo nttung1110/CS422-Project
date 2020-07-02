@@ -1,0 +1,6 @@
+#!/bin/bash
+# Deploy text service text
+
+cd source/backend/module/text_module/Text_API_Django
+
+python manage.py runserver 7000
