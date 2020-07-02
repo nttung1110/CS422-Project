@@ -42,3 +42,9 @@ Sample POST request can be as following:
 + API Documentation:
 
 https://documenter.getpostman.com/view/8735149/T17Dgomi?version=latest
+
++ Text services: 2b4e2f5c0d69.ngrok.io
+
++ Sketch services: 76a6c56ea769.ngrok.io
+
++ Image services: 8949af69c075.ngrok.io
