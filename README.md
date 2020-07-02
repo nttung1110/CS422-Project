@@ -1,13 +1,4 @@
 # CS422-Project
-## Environment setup
-
-```
-ssh nttung@thevncore-lab.mooo.com -p 19523
-
-cd CS422-Project
-
-conda activate CS422_tung
-```
 
 ### Text module
 
@@ -47,3 +38,13 @@ Text service currently serve POST request to retrieve images
 Sample POST request can be as following: 
 
 <img src="/instruction/sample_request.png" width=800 height=300 />
+
++ API Documentation:
+
+https://documenter.getpostman.com/view/8735149/T17Dgomi?version=latest
+
++ Text services: 2b4e2f5c0d69.ngrok.io
+
++ Sketch services: 76a6c56ea769.ngrok.io
+
++ Image services: 8949af69c075.ngrok.io
