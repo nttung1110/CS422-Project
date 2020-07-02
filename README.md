@@ -43,8 +43,8 @@ Sample POST request can be as following:
 
 https://documenter.getpostman.com/view/8735149/T17Dgomi?version=latest
 
-+ Text services: 2b4e2f5c0d69.ngrok.io
++ Text services: 57df041f17c9.ngrok.io
 
-+ Sketch services: 76a6c56ea769.ngrok.io
++ Sketch services: abc0ffd6ac6b.ngrok.io
 
-+ Image services: 8949af69c075.ngrok.io
++ Image services: 868d3042cd25.ngrok.io
