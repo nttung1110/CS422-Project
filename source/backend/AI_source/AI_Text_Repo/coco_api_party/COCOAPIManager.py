@@ -9,8 +9,9 @@ save_retrieved_imgIds = '/home/nttung/CS422-Project/list_imgID.txt'
 
 class COCOAPIManager():
 
-    def __init__(self, request):
+    def __init__(self, request, coco):
         self.request= request
+        self.coco = coco
     
     def build_available_anno(self, imgIds):
         '''
@@ -85,7 +86,7 @@ class COCOAPIManager():
         score = sorted(score.items(), key=lambda x:x[1], reverse=True)
         return score
 
-    def mutual_process(self, imgIds, norm_q_list, coco, limit_size, list_annot):
+    def mutual_process(self, imgIds, norm_q_list, limit_size, list_annot):
         '''
             both refine and retrieve use this function
         '''
@@ -95,7 +96,7 @@ class COCOAPIManager():
         count = 0
         res["list_img"] = []
         for (each_id, each_score) in score: #score in list of tuple with format ('imageId', 'score')
-            img_instance = coco.loadImgs([int(each_id)])[0]
+            img_instance = self.coco.loadImgs([int(each_id)])[0]
             img_instance["score"] = each_score
             res["list_img"].append(img_instance)
 
@@ -116,7 +117,7 @@ class COCOAPIManager():
 
     def retrieve(self, request):
         # get coco instance
-        coco = self.init_COCO_model()
+        # coco = self.init_COCO_model()
         
 
         # extract field
@@ -128,7 +129,7 @@ class COCOAPIManager():
         list_annot = self.load_annot()
 
         imgIds = list_annot.keys()
-        res = self.mutual_process(imgIds, norm_q_list, coco, limit_size, list_annot)
+        res = self.mutual_process(imgIds, norm_q_list, limit_size, list_annot)
         self.save_imgID_for_debug_retrieve(res)
         return res
 
@@ -142,7 +143,7 @@ class COCOAPIManager():
         return imgIds
 
     def refine(self, request):
-        coco = self.init_COCO_model()
+        # coco = self.init_COCO_model()
 
         imgIds = request["list_imgIds"]
         imgIds = self.normalize_listid_for_refine(imgIds)
@@ -153,7 +154,7 @@ class COCOAPIManager():
         limit_size = 10
         score = self.sort_most_relevant(norm_q_list, imgIds, list_annot)
 
-        res = self.mutual_process(imgIds, norm_q_list, coco, limit_size, list_annot)
+        res = self.mutual_process(imgIds, norm_q_list, limit_size, list_annot)
 
         return res
 

@@ -3,4 +3,4 @@
 
 cd source/backend/module/image_module/Image_API_Django
 
-python manage.py runserver 6002
+python manage.py runserver 5002

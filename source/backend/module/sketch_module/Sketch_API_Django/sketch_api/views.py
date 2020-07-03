@@ -23,9 +23,10 @@ from module.sketch_module.Sketch_Action import Sketch_Action
 #     queryset = Hero.objects.all().order_by('name')
 #     serializer_class = HeroSerializer
 
-class SketchSearch(APIView):
+class SketchSearch(APIView, AI_Services_Manager):
+    ai_service = AI_Services_Manager
     def post(self, request):# do search request
-        all_services = AI_Services_Manager()
+        all_services = self.ai_service
         get_action = Sketch_Action(request)
         results_search = get_action.process_request(all_services)
         return Response({"results": results_search})

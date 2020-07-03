@@ -23,9 +23,10 @@ from module.image_module.Image_Action import Image_Action
 #     queryset = Hero.objects.all().order_by('name')
 #     serializer_class = HeroSerializer
 
-class ImageSearch(APIView):
+class ImageSearch(APIView, AI_Services_Manager):
+    ai_service = AI_Services_Manager
     def post(self, request):# do search request
-        all_services = AI_Services_Manager()
+        all_services = self.ai_service
         get_action = Image_Action(request)
         results_search = get_action.process_request(all_services)
         return Response({"results": results_search})

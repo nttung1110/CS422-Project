@@ -10,7 +10,12 @@ class Sketch_Action(Interface_Action):
         my_req = {}
         my_req["width"] = str(request.POST["width"])
         my_req["height"] = str(request.POST["height"])
-        my_req["ink"] = request.POST["ink"]
+
+        a = str(request.POST["a"])
+        b = str(request.POST["b"])
+        c = str(request.POST["c"])
+
+        my_req["ink"] = "[" + a + "," + b + "," + c + "]"
         my_req["limit_size"] = int(request.POST["limit_size"])
         return my_req
 
