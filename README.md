@@ -50,4 +50,4 @@ https://documenter.getpostman.com/view/8735149/T17Dgomi?version=latest
 + Image services: ec35e7629360.ngrok.io
 
 ### Demo 
-![Playing computer](/visual_search.gif)
+https://www.youtube.com/watch?v=hX6_5KruNC4
